@@ -1,11 +1,11 @@
 package com.bellini.cursomc.repositories;
 
-import com.bellini.cursomc.domain.Categoria;
+import com.bellini.cursomc.domain.Endereco;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface CategoriaRepository extends JpaRepository<Categoria, Integer> {
+public interface EnderecoRepository extends JpaRepository<Endereco, Integer> {
 
 
 }

@@ -1,11 +1,11 @@
 package com.bellini.cursomc.repositories;
 
-import com.bellini.cursomc.domain.Endereco;
+import com.bellini.cursomc.domain.Cliente;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface EnderecoRepository extends JpaRepository<Endereco, Integer> {
+public interface ClienteRepository extends JpaRepository<Cliente, Integer> {
 
 
 }

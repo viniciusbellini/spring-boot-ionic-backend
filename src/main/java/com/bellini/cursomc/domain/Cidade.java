@@ -1,5 +1,8 @@
 package com.bellini.cursomc.domain;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import javax.persistence.Id;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Entity;
@@ -19,6 +22,7 @@ public class Cidade implements Serializable {
     private Integer id;
     private String nome;
 
+    @JsonManagedReference
     @ManyToOne
     @JoinColumn(name="estado_id")
     private Estado estado;

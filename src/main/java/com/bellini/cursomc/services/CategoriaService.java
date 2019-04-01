@@ -1,6 +1,7 @@
 package com.bellini.cursomc.services;
 
 import com.bellini.cursomc.domain.Categoria;
+import com.bellini.cursomc.dto.CategoriaDTO;
 import com.bellini.cursomc.repositories.CategoriaRepository;
 import com.bellini.cursomc.services.exceptions.DataIntegrityException;
 import com.bellini.cursomc.services.exceptions.ObjectNotFoundException;
@@ -55,5 +56,9 @@ public class CategoriaService {
     public Page<Categoria> findPage(Integer page, Integer linesPerPage, String orderBy, String direction){
         PageRequest pageRequest = PageRequest.of(page, linesPerPage, Sort.Direction.valueOf(direction), orderBy);
         return repo.findAll(pageRequest);
+    }
+
+    public Categoria fromDTO(CategoriaDTO objDTO){
+        return new Categoria(objDTO.getId(), objDTO.getNome());
     }
 }

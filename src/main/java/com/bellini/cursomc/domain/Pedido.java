@@ -1,6 +1,7 @@
 package com.bellini.cursomc.domain;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import org.hibernate.cache.spi.support.AbstractReadWriteAccess;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -43,6 +44,14 @@ public class Pedido implements Serializable {
         this.instante = instante;
         this.cliente = cliente;
         this.enderecoEntrega = enderecoEntrega;
+    }
+
+    public Double getValorTotal(){
+        double soma = 0;
+        for(ItemPedido ip : itens){
+            soma += ip.getSubtotal();
+        }
+        return soma;
     }
 
     public Integer getId() {
